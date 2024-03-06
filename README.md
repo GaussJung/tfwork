@@ -49,12 +49,19 @@ Hello Terraform Docker NginX WEB-Service V1.0
 $ curl http://서버IP:8080    
 
 # Operation    
-1) 로그확인   	  
-$ tail -f ~/tfwork/nginx-resource/logs     
-2) 설정변경     
-$ vi ~/tfwork/nginx-resource/conf/myapp.conf     
-3) 웹문서변경     
-$ vi ~/tfwork/nginx-resource/wwwdoc/index.html     
+1) 로그파일    
+- 접속로그 : ~/tfwork/nginx-resource/logs/access.log  
+- 오류로그 : ~/tfwork/nginx-resource/logs/error.log     
+※ 모니터링 : tail -f 로그파일경로   
+      
+2) 설정파일   
+- 기본설정 : ~/tfwork/nginx-resource/conf/nginx.conf     
+- 추가설정 : ~/tfwork/nginx-resource/conf/myapp.conf       
+※ 설정변경 : vi 설정파일경로  
+ 
+3) 웹문서변경    
+- Base디렉토리 :  ~/tfwork/nginx-resource/wwwdoc    
+- 기본문서내용변경 : index.html 편집    
   
 # Clean Resource   		
 $ sudo terraform destroy : (yes) / 삭제    
