@@ -1,5 +1,5 @@
 # Remark   
-- 제목 : TFWork v0.55 
+- 제목 : TFWork v0.56 
 - 기능 : TerraForm을 활용한 NginX 정적웹서버  
 - 키워드 : IaC(Infrastructure as Code), TerraForm, Docker, NginX  
 - 목적 : 테라폼을 활용한 IaC개념이해 및 실무적용  
@@ -32,24 +32,27 @@ $ sudo apt-get install terraform
 $ terraform init  : 초기화   
 $ sudo terraform plan  : (yes) / 계획설정
 (message) Plan: 2 to add, 0 to change, 0 to destroy. 
-$ sudo terraform apply : (yes) / 적용   	
-(message)
-docker_image.nginx: Creating...
-docker_image.nginx: Creation complete after 7s [id=sha256:760b7cbba31e196288effd2af6924c42637ac5e0d67db4de6309f24518844676nginx]
-docker_container.nginx: Creating...
-docker_container.nginx: Creation complete after 2s [id=d06680e20739069bcba253f798d0a54a22700164c6daa1ed4553ed8ea3f2eda6]
+$ sudo terraform apply : (yes) / 적용   	  
+(message)  
+docker_image.nginx: Creating...  
+docker_image.nginx: Creation complete after 7s [id=sha256:760b7cbba31e196288effd2a--------------12984676nginx]  
+docker_container.nginx: Creating...  
+docker_container.nginx: Creation complete after 2s [id=d06680e20739069bcba253-------------53ed8ea3f2eda6]  
 
 # Test   
 1) 웹브라우저 : http://서버IP:8080
 (Screen) Hello Terraform Docker NginX WEB-Service V1.0
+
 3) curl 확인    
-$ curl http://서버IP:8080   
-2) 로그확인   	
-$ tail -f ~/tfwork/nginx-resource/logs   
-3) 설정변경   
-$ vi ~/tfwork/nginx-resource/conf/myapp.conf   
-4) 웹문서변경   
-$ vi ~/tfwork/nginx-resource/wwwdoc/index.html   
+$ curl http://서버IP:8080
+
+# Operation    
+1) 로그확인   	  
+$ tail -f ~/tfwork/nginx-resource/logs     
+2) 설정변경     
+$ vi ~/tfwork/nginx-resource/conf/myapp.conf     
+3) 웹문서변경     
+$ vi ~/tfwork/nginx-resource/wwwdoc/index.html     
   
 # Clean Resource   		
 $ sudo terraform destroy : (yes) / 삭제   
