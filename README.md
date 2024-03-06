@@ -1,5 +1,5 @@
 # Remark  
-- 제목 : TFWork v0.5  
+- 제목 : TFWork v0.51   
 - 기능 : TerraForm을 활용한 NginX 정적웹서버
 - 키워드 : IaC(Infrastructure as Code), TerraForm, Docker, NginX
 - 목적 : 테라폼을 활용한 IaC개념이해 및 실무적용
@@ -16,7 +16,7 @@ $ sudo sh get-docker.sh
 $ sudo docker run hello-world
 3) 소스 Pull  
 $ git pull https://github.com/GaussJung/tfwork.git  
-$ cd ~/tfwork/nginx-terraform
+$ cd ~/tfwork/nginx-tf 
 4) 서비스기동
 $ sudo terraform init  : 테라폼 초기화
 $ sudo terraform plan  : (yes) / 계획설정
