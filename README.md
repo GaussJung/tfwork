@@ -1,5 +1,5 @@
 # Description     
-- 제목 : TFWork v0.67
+- 제목 : TFWork v0.68
 - 작성 : C.W.Jung (cwjung123@gmail.com)
 - 일자 : 2024. 03. 07 
 - 기능 : TerraForm을 활용한 NginX 정적웹서버  
@@ -41,8 +41,8 @@ $ bash ./terraform-ubuntu-install.sh
 ======= End of Ubuntu TerraForm Installation =======
 
 - 설치확인   
-$ terraform -version
-(message)
+$ terraform -version  
+(message)  
 Terraform v1.7.4 on linux_arm64  
 
 4) TerraForm적용 : 2-5 minutes 
@@ -71,7 +71,7 @@ Hello Terraform Docker NginX WEB-Service V1.0
   
 3) curl 확인      
 $ curl http://localhost:8000
-(message)
+(message)  
 Hello Terraform Docker NginX WEB-Service V1.0   
 
 # Operation   
