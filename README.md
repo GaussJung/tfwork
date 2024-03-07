@@ -1,5 +1,7 @@
 # Description     
-- 제목 : TFWork v0.63
+- 제목 : TFWork v0.64
+- 작성 : C.W.Jung (cwjung123@gmail.com)
+- 일자 : 2024. 03. 07 
 - 기능 : TerraForm을 활용한 NginX 정적웹서버  
 - 키워드 : IaC(Infrastructure as Code), TerraForm, Docker, NginX  
 - 목적 : 테라폼을 활용한 IaC개념이해 및 실무적용  
