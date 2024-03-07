@@ -1,5 +1,5 @@
 # Description     
-- 제목 : TFWork v0.68
+- 제목 : TFWork v0.70
 - 작성 : C.W.Jung (cwjung123@gmail.com)
 - 일자 : 2024. 03. 07 
 - 기능 : TerraForm을 활용한 NginX 정적웹서버  
@@ -70,8 +70,8 @@ $ sudo docker ps -a
 Hello Terraform Docker NginX WEB-Service V1.0  
   
 3) curl 확인      
-$ curl http://localhost:8000
-(message)  
+$ curl http://localhost:8080  
+(message)    
 Hello Terraform Docker NginX WEB-Service V1.0   
 
 # Operation   
