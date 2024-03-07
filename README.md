@@ -1,5 +1,5 @@
 # Description     
-- 제목 : TFWork v0.65
+- 제목 : TFWork v0.67
 - 작성 : C.W.Jung (cwjung123@gmail.com)
 - 일자 : 2024. 03. 07 
 - 기능 : TerraForm을 활용한 NginX 정적웹서버  
@@ -64,9 +64,9 @@ $ sudo docker ps -a
 7cd7346bb61e   760b7cbba31e   "/docker-entrypoint.…"   31 seconds ago   Up 30 seconds       0.0.0.0:8090->80/tcp   MyNginxContainer   
  
 2) 웹브라우저 접속확인  
-주소줄 : http://15.15.000.000.35:8080 
-※ 15.000.000.35는 서버의 Public IP에 해당.    
-(Screen)  
+주소줄 : http://15.15.000.000.35:8080   
+※ 15.000.000.35는 서버의 Public IP에 해당.      
+(screen)  
 Hello Terraform Docker NginX WEB-Service V1.0  
   
 3) curl 확인      
