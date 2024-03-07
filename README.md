@@ -1,5 +1,5 @@
 # Description     
-- 제목 : TFWork v0.64
+- 제목 : TFWork v0.65
 - 작성 : C.W.Jung (cwjung123@gmail.com)
 - 일자 : 2024. 03. 07 
 - 기능 : TerraForm을 활용한 NginX 정적웹서버  
@@ -119,7 +119,7 @@ Hello Terraform Docker NginX WEB-Service V1.1 Port 8000
 
 # Clean Resource : 1~2 minutes    	
 $ cd ~/tfwork/nginx-tf   
-$ sudo terraform destroy : (yes) / 삭제    
-(message)
+$ sudo terraform destroy : (yes) / 삭제     
+(message)  
 Destroy complete! Resources: 2 destroyed. 
  
