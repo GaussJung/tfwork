@@ -33,9 +33,9 @@ $ cd ~/tfwork/scripts
 $ bash ./awscli-ubuntu-install.sh  
 (message)    
 ======= End of Ubuntu AWS CLI Version2 Installation =======  
-$ aws configure : 선택사항으로서 진행후 AWS CLI 다양한 기능활용 
+$ aws configure  : AWS CLI 다양한 기능활용 (아래의 환경변수 내보내기 하지 않아도 됨)
 
-3) CLI환경변수 내보내기   
+3) CLI환경변수 내보내기 (1회 사용)  aws configure를 진행하지 않을 경우   
 $ export AWS_ACCESS_KEY_ID=   
 $ export AWS_SECRET_ACCESS_KEY=   
   
@@ -136,10 +136,10 @@ Terraform will perform the following actions:
       + spot_instance_request_id             = (known after apply)
       + subnet_id                            = (known after apply)
       + tags                                 = {
-          + "Name" = "TF-ArmAppServerInstance"
+          + "Name" = "TF-AppServerInstance"
         }
       + tags_all                             = {
-          + "Name" = "TF-ArmAppServerInstance"
+          + "Name" = "TF-AppServerInstance"
         }
       + tenancy                              = (known after apply)
       + user_data                            = (known after apply)
@@ -164,51 +164,7 @@ Terraform will perform the following actions:
   # aws_instance.app_server will be created
   + resource "aws_instance" "app_server" {
       + ami                                  = "ami-0568072f574d822a4"
-      + arn                                  = (known after apply)
-      + associate_public_ip_address          = (known after apply)
-      + availability_zone                    = (known after apply)
-      + cpu_core_count                       = (known after apply)
-      + cpu_threads_per_core                 = (known after apply)
-      + disable_api_stop                     = (known after apply)
-      + disable_api_termination              = (known after apply)
-      + ebs_optimized                        = (known after apply)
-      + get_password_data                    = false
-      + host_id                              = (known after apply)
-      + host_resource_group_arn              = (known after apply)
-      + iam_instance_profile                 = (known after apply)
-      + id                                   = (known after apply)
-      + instance_initiated_shutdown_behavior = (known after apply)
-      + instance_lifecycle                   = (known after apply)
-      + instance_state                       = (known after apply)
-      + instance_type                        = "t4g.nano"
-      + ipv6_address_count                   = (known after apply)
-      + ipv6_addresses                       = (known after apply)
-      + key_name                             = (known after apply)
-      + monitoring                           = (known after apply)
-      + outpost_arn                          = (known after apply)
-      + password_data                        = (known after apply)
-      + placement_group                      = (known after apply)
-      + placement_partition_number           = (known after apply)
-      + primary_network_interface_id         = (known after apply)
-      + private_dns                          = (known after apply)
-      + private_ip                           = (known after apply)
-      + public_dns                           = (known after apply)
-      + public_ip                            = (known after apply)
-      + secondary_private_ips                = (known after apply)
-      + security_groups                      = (known after apply)
-      + source_dest_check                    = true
-      + spot_instance_request_id             = (known after apply)
-      + subnet_id                            = (known after apply)
-      + tags                                 = {
-          + "Name" = "TF-ArmAppServerInstance"
-        }
-      + tags_all                             = {
-          + "Name" = "TF-ArmAppServerInstance"
-        }
-      + tenancy                              = (known after apply)
-      + user_data                            = (known after apply)
-      + user_data_base64                     = (known after apply)
-      + user_data_replace_on_change          = false
+       -------- 생략 ---------
       + vpc_security_group_ids               = (known after apply)
     }
 
@@ -233,9 +189,44 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 - AWS계정접속하여 EC2로 이동
 - 생성된 EC2에 접속함. 
 
-# TerraForm Clean Resource : 1~5분     	
-$ cd ~/tfwork/nginx-tf   
+# TerraForm 리소스 삭제 
+$ cd ~/tfwork/aws/ec2-basic 
 $ sudo terraform destroy : (yes) / 삭제     
 (message)  
-Destroy complete! Resources: 2 destroyed. 
- 
+```
+ubuntu@ip-172-31-1-109:~/tfwork/aws/ec2-basic$ terraform destroy
+aws_instance.app_server: Refreshing state... [id=i-0b40edb515fea5c62]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # aws_instance.app_server will be destroyed
+  - resource "aws_instance" "app_server" {
+      - ami                                  = "ami-0568072f574d822a4" -> null
+      - arn                                  = "arn:aws:ec2:us-east-1:141352286036:instance/i-0b40edb515fea5c62" -> null
+      - associate_public_ip_address          = true -> null
+      - availability_zone                    = "us-east-1b" -> null
+      --- 생략 ---
+  } 
+  
+Plan: 0 to add, 0 to change, 1 to destroy.
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: yes
+
+aws_instance.app_server: Destroying... [id=i-0b40edb515fea5c62]
+aws_instance.app_server: Still destroying... [id=i-0b40edb515fea5c62, 10s elapsed]
+aws_instance.app_server: Still destroying... [id=i-0b40edb515fea5c62, 20s elapsed]
+aws_instance.app_server: Still destroying... [id=i-0b40edb515fea5c62, 30s elapsed]
+aws_instance.app_server: Still destroying... [id=i-0b40edb515fea5c62, 40s elapsed]
+aws_instance.app_server: Still destroying... [id=i-0b40edb515fea5c62, 50s elapsed]
+aws_instance.app_server: Still destroying... [id=i-0b40edb515fea5c62, 1m0s elapsed]
+aws_instance.app_server: Still destroying... [id=i-0b40edb515fea5c62, 1m10s elapsed]
+aws_instance.app_server: Destruction complete after 1m13s
+``` 
+
