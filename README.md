@@ -1,5 +1,5 @@
 # Description     
-- 제목 : TFWork v0.752
+- 제목 : TFWork v0.754
 - 작성 : C.W.Jung (cwjung123@gmail.com)
 - 기능 : TerraForm을 활용한 인프라관리 
 - 목적 : 테라폼을 활용한 IaC개념이해 및 실무적용  
@@ -7,7 +7,7 @@
  
 # 실습분류      
 1) NginX 테라폼 
-./nginx-tf/readme-nginx.md 
+[./nginx-tf/readme-nginx.md](https://github.com/GaussJung/tfwork/blob/master/nginx-resource/readme_nignx.md)
  
 2) AWS리소스 테라폼 
 - ec2기본 :  [./aws/ec2-basic/readme.md](https://github.com/GaussJung/tfwork/blob/master/aws/readme-ec2-basic.md) 

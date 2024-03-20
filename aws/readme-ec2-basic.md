@@ -16,15 +16,15 @@
 
 # 실습소스 Pull  (위에서 생성한 EC2접속)
 $ git clone https://github.com/GaussJung/tfwork.git    
- 
-# 사전준비사항(Prerequsite)
+  
+# 사전준비사항(Prerequsite)   
 1) Terraform CLI설치 (Ubuntu Linux) : 2-5 minutes  
 (Ref) https://developer.hashicorp.com/terraform/tutorials/docker-get-started/install-cli      
-위의 URL을 참조하여 설치하거나 아래의 스크립트 실행  
+위의 URL을 참조하여 설치하거나 아래의 스크립트 실행   
 $ cd ~/tfwork/scripts  
-$ bash ./terraform-ubuntu-install.sh  
-(message)  
-======= End of Ubuntu TerraForm Installation =======
+$ bash ./terraform-ubuntu-install.sh   
+(message)   
+======= End of Ubuntu TerraForm Installation =======   
 
 2) AWS CLI설정  
 (Ref) https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/getting-started-install.html  
