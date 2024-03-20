@@ -21,6 +21,6 @@ resource "aws_instance" "app_server" {
   instance_type = "t4g.nano"
 
   tags = {
-    Name = "TF-ArmAppServerInstance"
+    Name = "TF-AppServerInstance"
   }
 }
