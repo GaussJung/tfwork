@@ -1,5 +1,11 @@
 #! /bin/bash
 
+# 기능 : TerraForm CLI설치 
+# 설치 Ref URL : https://developer.hashicorp.com/terraform/tutorials/docker-get-started/install-cli   
+# 대상 OS : Ubuntu Linux
+# 작성자 : 정철웅 (cwjung123@gmail.com)
+# version : 1.0 
+
 # Step1. Install gnupg, software-properties-common, and curl 
 sudo apt-get update && sudo apt-get install -y gnupg software-properties-common 
 sleep 1 
