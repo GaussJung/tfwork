@@ -1,5 +1,5 @@
 # Description     
-- 제목 : TFWork v0.70
+- 제목 : TFWork v0.71
 - 작성 : C.W.Jung (cwjung123@gmail.com)
 - 일자 : 2024. 03. 07 
 - 기능 : TerraForm을 활용한 NginX 정적웹서버  
