@@ -4,7 +4,7 @@
 # 설치 Ref URL : https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/getting-started-install.html
 # 대상 OS : Ubuntu Linux
 # 작성자 : 정철웅 (cwjung123@gmail.com)
-# version : 1.0 
+# version : 1.01 
 
 OSArch=$(uname -m)
 
@@ -16,7 +16,7 @@ sleep 1
 if [ "$OSArch" = "aarch64" ]; then 
   echo "======= ARM Architecture  : $OSArch  ======" 
   curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip" -o "awscliv2.zip"
-elif [ "$OSArch" -eq "x86_64" ]; then
+elif [ "$OSArch" = "x86_64" ]; then
   echo "======= X86 Architecture  : $OSArch  ======"
   curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 else

@@ -1,7 +1,7 @@
 # Description     
 - 제목 : EC2인스턴스 단순 생성 
 - 작성 : 정철웅 (cwjung123@gmail.com)
-- 버전 : 0.5
+- 버전 : 0.52
 - 기능 : TerraForm을 활용한 EC2인스턴스 기본생성 
 - 키워드 : IaC(Infrastructure as Code), TerraForm, EC2 
 - 소요시간 : 실습 30분 
@@ -20,15 +20,17 @@ $ git clone https://github.com/GaussJung/tfwork.git
 # 사전준비사항(Prerequsite)
 1) Terraform CLI설치 (Ubuntu Linux) : 2-5 minutes  
 (Ref) https://developer.hashicorp.com/terraform/tutorials/docker-get-started/install-cli      
-$ cd ~/tfwork/nginx-tf/scripts  
+위의 URL을 참조하여 설치하거나 아래의 스크립트 실행  
+$ cd ~/tfwork/scripts  
 $ bash ./terraform-ubuntu-install.sh  
 (message)  
 ======= End of Ubuntu TerraForm Installation =======
 
 2) AWS CLI설정  
 (Ref) https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/getting-started-install.html  
-$ cd ~/tfwork/nginx-tf/scripts    
-$ tfwork/scripts/awscli-ubuntu-install.sh  
+위의 URL을 참조하여 설치하거나 아래의 스크립트 실행     
+$ cd ~/tfwork/scripts    
+$ bash ./awscli-ubuntu-install.sh  
 (message)    
 ======= End of Ubuntu AWS CLI Version2 Installation =======  
 $ aws configure  (사전에 IAM사용자설정)  
