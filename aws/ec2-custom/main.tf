@@ -15,12 +15,12 @@ provider "aws" {
   region = "us-east-1"
 }
 
-// ami-0568072f574d822a4 : Ubuntu 22.04   
+// ami-0568072f574d822a4 : Ubuntu 22.04  
 resource "aws_instance" "app_server" {
   ami = "ami-0568072f574d822a4"
-  instance_type = "t4g.nano"
+  instance_type = "t4g.micro"
 
   tags = {
-    Name = "TF-AppServerInstance"
+    Name = "TF-AppCustomInstance"
   }
 }
