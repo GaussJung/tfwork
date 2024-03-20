@@ -1,5 +1,5 @@
 # Description     
-- 제목 : TFWork v0.75
+- 제목 : TFWork v0.751
 - 작성 : C.W.Jung (cwjung123@gmail.com)
 - 기능 : TerraForm을 활용한 인프라관리 
 - 목적 : 테라폼을 활용한 IaC개념이해 및 실무적용  
@@ -11,8 +11,8 @@
  
 2) AWS리소스 테라폼 
 - ec2기본 :  [./aws/ec2-basic/readme.md](https://github.com/GaussJung/tfwork/blob/master/aws/readme-ec2-basic.md) 
-- ec2맞춤 : ./aws/ec2-custom/readme.md
-- s3생성 : ./aws/s3/readme.md
+- ec2맞춤 : [./aws/ec2-custom/readme.md](https://github.com/GaussJung/tfwork/blob/master/aws/readme-ec2-custom.md) 
+- s3생성 :  Later
 
 # 사전작업    
 1) 소스 Pull  
@@ -36,8 +36,7 @@ $ bash ./terraform-ubuntu-install.sh
 $ terraform -version  
 (message)  
 Terraform v1.7.4 on linux_arm64  
-  
-
+ 
 # 참조링크   
 - 테라폼홈 : https://developer.hashicorp.com/terraform   
 - 테라폼시작 : https://developer.hashicorp.com/terraform/tutorials  
