@@ -1,7 +1,7 @@
 # Description     
 - 제목 : EC2인스턴스 단순 생성 
 - 작성 : 정철웅 (cwjung123@gmail.com)
-- 버전 : 0.53
+- 버전 : 0.54
 - 기능 : TerraForm을 활용한 EC2인스턴스 기본생성 
 - 키워드 : IaC(Infrastructure as Code), TerraForm, EC2 
 - 소요시간 : 실습 30분 
@@ -33,19 +33,20 @@ $ cd ~/tfwork/scripts
 $ bash ./awscli-ubuntu-install.sh  
 (message)    
 ======= End of Ubuntu AWS CLI Version2 Installation =======  
-$ aws configure  : AWS CLI 다양한 기능활용 (아래의 환경변수 내보내기 하지 않아도 됨)
-
-3) CLI환경변수 내보내기 (1회 사용)  aws configure를 진행하지 않을 경우   
-$ export AWS_ACCESS_KEY_ID=   
-$ export AWS_SECRET_ACCESS_KEY=   
   
-4) 테라폼 설치확인   
+3) CLI설정  
+A. AWS콘솔에서 IAM사용자 생성후 csv파일 다운로드  
+B. CLI구성 : 설정파일 저장방식   
+$ aws configure  : AWS CLI 다양한 기능활용 (아래의 환경변수 내보내기 하지 않아도 됨)  
+C. CLI구성 : 환경변수 내보내기 (1회 사용 / aws configure를 진행하지 않을 경우 )    
+$ export AWS_ACCESS_KEY_ID=AB23----X59A   
+$ export AWS_SECRET_ACCESS_KEY=xYABC23----AYUxYZ23Y
+  
+5) 테라폼 설치확인   
 $ terraform -version   
 (message)   
-Terraform v1.7.4 on linux_arm64   
+Terraform v1.X.X on linux_arm64   
 
-
- 
 # TerraForm적용   
 
 $ cd ~/tfwork/aws/ec2-basic : 설정파일(main.tf) 내용확인   
