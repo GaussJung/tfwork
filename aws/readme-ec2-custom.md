@@ -1,10 +1,10 @@
 # Description     
 - 제목 : EC2인스턴스 맞춤 생성 
 - 작성 : 정철웅 (cwjung123@gmail.com)
-- 버전 : 0.583
+- 버전 : 0.584
 - 기능 : TerraForm을 활용한 EC2인스턴스 맞춤생성 
 - 키워드 : IaC(Infrastructure as Code), TerraForm, EC2 
-- 소요시간 : 실습 30분 
+- 소요시간 : 실습 40분 
 
 # 설치서버생성 (AWS콘솔) 
 1) 서버생성 (ex:AWS Linux Ubuntu 22.04 / t2.micro / x86_64)   
@@ -107,11 +107,9 @@ ubuntu@ip-172-34-1-101:~/tfwork/aws/ec2-custom$ terraform plan
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
 
-Terraform will perform the following actions:
-
-  # aws_instance.app_server will be created
-  + resource "aws_instance" "app_server" {
-      + ami                                  = "ami-0568072f574d822a4"
+  # aws_instance.my_server will be created
+  + resource "aws_instance" "my_server" {
+      + ami                                  = "ami-0a55b----0b74fc30"
       + arn                                  = (known after apply)
       + associate_public_ip_address          = (known after apply)
       + availability_zone                    = (known after apply)
@@ -131,7 +129,7 @@ Terraform will perform the following actions:
       + instance_type                        = "t4g.nano"
       + ipv6_address_count                   = (known after apply)
       + ipv6_addresses                       = (known after apply)
-      + key_name                             = (known after apply)
+      + key_name                             = "myawskeyname"
       + monitoring                           = (known after apply)
       + outpost_arn                          = (known after apply)
       + password_data                        = (known after apply)
@@ -148,16 +146,18 @@ Terraform will perform the following actions:
       + spot_instance_request_id             = (known after apply)
       + subnet_id                            = (known after apply)
       + tags                                 = {
-          + "Name" = "TF-AppServerInstance"
+          + "Name" = "TF-AppCustomInstance"
         }
       + tags_all                             = {
-          + "Name" = "TF-AppServerInstance"
+          + "Name" = "TF-AppCustomInstance"
         }
       + tenancy                              = (known after apply)
       + user_data                            = (known after apply)
       + user_data_base64                     = (known after apply)
       + user_data_replace_on_change          = false
-      + vpc_security_group_ids               = (known after apply)
+      + vpc_security_group_ids               = [
+          + "sg-025f677----509eed1",
+        ]
     }
 
 Plan: 1 to add, 0 to change, 0 to destroy.
@@ -174,7 +174,7 @@ Terraform used the selected providers to generate the following execution plan. 
 Terraform will perform the following actions:
 
   # aws_instance.app_server will be created
-  + resource "aws_instance" "app_server" {
+  + resource "aws_instance" "my_server" {
       + ami                                  = "ami-0a55b----0b74fc30"
       + key_name                             = "myawskeyname"
        -------- 생략 ---------
