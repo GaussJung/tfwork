@@ -198,8 +198,8 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 - AWS계정접속하여 EC2로 이동
 - 생성된 EC2에 접속함. 
 
-# TerraForm 리소스 삭제 
-$ cd ~/tfwork/aws/ec2-basic 
+# TerraForm 리소스 삭제  
+$ cd ~/tfwork/aws/ec2-basic  
 $ sudo terraform destroy : (yes) / 삭제     
 (message)  
 ```

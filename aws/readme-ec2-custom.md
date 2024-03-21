@@ -1,7 +1,7 @@
 # Description     
 - 제목 : EC2인스턴스 맞춤 생성 
 - 작성 : 정철웅 (cwjung123@gmail.com)
-- 버전 : 0.584
+- 버전 : 0.585  
 - 기능 : TerraForm을 활용한 EC2인스턴스 맞춤생성 
 - 키워드 : IaC(Infrastructure as Code), TerraForm, EC2 
 - 소요시간 : 실습 40분 
@@ -204,8 +204,8 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 - AWS계정접속하여 EC2로 이동
 - 생성된 EC2에 접속함. 
 
-# TerraForm 리소스 삭제 
-$ cd ~/tfwork/aws/ec2-custom 
+# TerraForm 리소스 삭제  
+$ cd ~/tfwork/aws/ec2-custom  
 $ sudo terraform destroy : (yes) / 삭제     
 (message)  
 ```
