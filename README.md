@@ -1,9 +1,9 @@
 # Description     
-- 제목 : TFWork v0.764
-- 작성 : C.W.Jung (cwjung123@gmail.com)
-- 기능 : TerraForm을 활용한 인프라관리 
+- 제목 : TFWork v0.767  
+- 작성 : C.W.Jung (cwjung123@gmail.com)  
+- 기능 : TerraForm을 활용한 인프라관리  
 - 목적 : 테라폼을 활용한 IaC개념이해 및 실무적용  
-- 사전지식 : Linux기본명령어, Cloud환경 가상서버 구동
+- 사전지식 : Linux기본명령어, Cloud환경 가상서버 구동  
  
 # 실습분류      
 1) NginX 테라폼 

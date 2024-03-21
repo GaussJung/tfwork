@@ -196,8 +196,8 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
  
 # TerraForm생성 리소스 확인 : 콘솔접속후 확인  
 - EC2생성확인  
-|![pictureAliasName](https://github.com/GaussJung/tfwork/assets/76603627/7ad7f53a-591b-4cac-94f5-6c09d0e5286c)|
--
+| ![pictureAliasName](https://github.com/GaussJung/tfwork/assets/76603627/7ad7f53a-591b-4cac-94f5-6c09d0e5286c) |
+|-|
 - AWS계정접속하여 EC2로 이동
 - 생성된 EC2에 접속함. 
 
