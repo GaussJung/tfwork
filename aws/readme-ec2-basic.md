@@ -1,7 +1,7 @@
 # Description     
 - 제목 : EC2인스턴스 단순 생성 
 - 작성 : 정철웅 (cwjung123@gmail.com)
-- 버전 : 0.57
+- 버전 : 0.59  
 - 기능 : TerraForm을 활용한 EC2인스턴스 기본생성 
 - 키워드 : IaC(Infrastructure as Code), TerraForm, EC2 
 - 소요시간 : 실습 30분 
@@ -17,7 +17,7 @@
 # 실습소스 Pull  (위에서 생성한 EC2접속)
 $ git clone https://github.com/GaussJung/tfwork.git    
   
-# 사전준비사항(Prerequsite)   
+# 사전준비사항(Prerequsite)  
 1) Terraform CLI설치 (Ubuntu Linux)  
 (Ref) https://developer.hashicorp.com/terraform/tutorials/docker-get-started/install-cli      
 위의 URL을 참조하여 설치하거나 아래의 스크립트 실행   
@@ -41,22 +41,23 @@ $ bash ./awscli-ubuntu-install.sh
 A. AWS콘솔에서 IAM사용자 생성후 csv파일 다운로드  
 B. CLI구성 : 설정파일 저장방식   
 $ aws configure  : AWS CLI 다양한 기능활용 (아래의 환경변수 내보내기 하지 않아도 됨)  
-```
+  ```
 $ aws configure
 AWS Access Key ID [None]: AKIAS----------ZPJEC
 AWS Secret Access Key [None]: t4yv8tC--------------------th0TKOeDcl
 Default region name [None]: ap-northeast-2
 Default output format [None]: json
-```   
-$ aws --ver
-(message)
-aws-cli/2.15.XX Python/3.XX.XX Linux/6.5.0-XXXX-aws exe/x86_64.ubuntu.22 prompt/off
 
+$ aws --ver  
+(message)  
+aws-cli/2.15.XX Python/3.XX.XX Linux/6.5.0-XXXX-aws exe/x86_64.ubuntu.22 prompt/off
+  ```   
+  
 C. CLI구성 : 환경변수 내보내기 (1회 사용 / aws configure를 진행하지 않을 경우 )   
-``` 
+  ``` 
 $ export AWS_ACCESS_KEY_ID=AKIAS----------ZPJEC  
 $ export AWS_SECRET_ACCESS_KEY=t4yv8tC--------------------th0TKOeDcl  
-```   
+  ```   
 
 # TerraForm적용   
 $ cd ~/tfwork/aws/ec2-basic : 설정파일(main.tf) 내용확인     
@@ -196,8 +197,7 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
  
 # TerraForm생성 리소스 확인 : 콘솔접속후 확인  
 - EC2생성확인  
-| ![pictureAliasName](https://github.com/GaussJung/tfwork/assets/76603627/7ad7f53a-591b-4cac-94f5-6c09d0e5286c) |
-|-|
+<kbd> ![생성완료EC2](https://github.com/GaussJung/tfwork/assets/76603627/7ad7f53a-591b-4cac-94f5-6c09d0e5286c)  
 - AWS계정접속하여 EC2로 이동
 - 생성된 EC2에 접속함. 
 
