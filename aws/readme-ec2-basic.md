@@ -1,7 +1,7 @@
 # Description     
 - 제목 : EC2인스턴스 단순 생성 
 - 작성 : 정철웅 (cwjung123@gmail.com)
-- 버전 : 0.57
+- 버전 : 0.58  
 - 기능 : TerraForm을 활용한 EC2인스턴스 기본생성 
 - 키워드 : IaC(Infrastructure as Code), TerraForm, EC2 
 - 소요시간 : 실습 30분 
@@ -196,8 +196,7 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
  
 # TerraForm생성 리소스 확인 : 콘솔접속후 확인  
 - EC2생성확인  
-| ![pictureAliasName](https://github.com/GaussJung/tfwork/assets/76603627/7ad7f53a-591b-4cac-94f5-6c09d0e5286c) |
-|-|
+<kbd> ![생성완료EC2](https://github.com/GaussJung/tfwork/assets/76603627/7ad7f53a-591b-4cac-94f5-6c09d0e5286c)  
 - AWS계정접속하여 EC2로 이동
 - 생성된 EC2에 접속함. 
 
