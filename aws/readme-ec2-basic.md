@@ -194,7 +194,7 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
  
 # TerraForm생성 리소스 확인 : 콘솔접속후 확인  
 - EC2생성확인  
-<kbd> ![생성완료EC2](https://github.com/GaussJung/tfwork/assets/76603627/7ad7f53a-591b-4cac-94f5-6c09d0e5286c)  
+<kbd> ![생성완료EC2](https://github.com/GaussJung/tfwork/assets/76603627/7ad7f53a-591b-4cac-94f5-6c09d0e5286c)</kbd>  
 - AWS계정접속하여 EC2로 이동
 - 생성된 EC2에 접속함. 
 
@@ -211,7 +211,7 @@ Terraform will perform the following actions:
   # aws_instance.app_server will be destroyed
   - resource "aws_instance" "app_server" {
       - ami                                  = "ami-0568072f574d822a4" -> null
-      - arn                                  = "arn:aws:ec2:us-east-1:141352286036:instance/i-0b40e-----ea5c62" -> null
+      - arn                                  = "arn:aws:ec2:us-east-1:111152282222:instance/i-0b40e-----ea5c62" -> null
       - associate_public_ip_address          = true -> null
       - availability_zone                    = "us-east-1b" -> null
       --- 생략 ---

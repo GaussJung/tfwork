@@ -1,7 +1,7 @@
 # Description     
 - 제목 : EC2인스턴스 맞춤 생성 
 - 작성 : 정철웅 (cwjung123@gmail.com)
-- 버전 : 0.581
+- 버전 : 0.582
 - 기능 : TerraForm을 활용한 EC2인스턴스 맞춤생성 
 - 키워드 : IaC(Infrastructure as Code), TerraForm, EC2 
 - 소요시간 : 실습 30분 
@@ -71,19 +71,22 @@ terraform {
   required_version = ">= 1.2.0"
 }
 
-// us-east-1 : N-버지니아 리전 
-provider "aws" {
-  region = "us-east-1"
-}
+// ami-0a55ba1c20b74fc30 : Ubuntu 22.04 for Arm64 
+// 사전에 생성된 키 및 보안그룹을 사용하여 인스턴스 생성 (콘솔에서)
+resource "aws_instance" "my_server" {
 
-// ami-0568072f574d822a4 : Ubuntu 22.04   
-resource "aws_instance" "app_server" {
-  ami = "ami-0568072f574d822a4"
+  ami = "ami-0a55ba1c20b74fc30"
+
   instance_type = "t4g.nano"
 
+  key_name = "myawskeyname"
+
+  vpc_security_group_ids = ["sg-025f67----7509eed1"]
+
   tags = {
-    Name = "TF-ArmAppServerInstance"
+    Name = "TF-AppCustomInstance"
   }
+
 }
 ```
 
@@ -172,9 +175,12 @@ Terraform will perform the following actions:
 
   # aws_instance.app_server will be created
   + resource "aws_instance" "app_server" {
-      + ami                                  = "ami-0568072f574d822a4"
+      + ami                                  = "ami-0a55b----0b74fc30"
+      + key_name                             = "myawskeyname"
        -------- 생략 ---------
-      + vpc_security_group_ids               = (known after apply)
+      + vpc_security_group_ids               = [
+          + "sg-025f67----509eed1",
+        ]
     }
 
 Plan: 1 to add, 0 to change, 0 to destroy.
@@ -187,14 +193,14 @@ Do you want to perform these actions?
 
 aws_instance.app_server: Creating...
 aws_instance.app_server: Still creating... [10s elapsed]
-aws_instance.app_server: Creation complete after 18s [id=i-7b70a-----yu5c77]
+aws_instance.app_server: Creation complete after 18s [id=i-0b155----6519ddb]
 
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 ```
  
 # TerraForm생성 리소스 확인 : 콘솔접속후 확인  
 - EC2생성확인  
-<kbd> ![생성완료EC2](https://github.com/GaussJung/tfwork/assets/76603627/7ad7f53a-591b-4cac-94f5-6c09d0e5286c)  
+<kbd> ![생성완료EC2] (https://github.com/GaussJung/tfwork/assets/76603627/480a2594-f000-4485-954c-6bfba05baa05) </kbd>  
 - AWS계정접속하여 EC2로 이동
 - 생성된 EC2에 접속함. 
 
@@ -204,14 +210,14 @@ $ sudo terraform destroy : (yes) / 삭제
 (message)  
 ```
 ubuntu@ip-172-34-1-101:~/tfwork/aws/ec2-custom$ terraform destroy
-aws_instance.app_server: Refreshing state... [id=i-7b70a-----yu5c77]
+aws_instance.app_server: Refreshing state... [id=i-0b155----6519ddb]
  
 Terraform will perform the following actions:
 
   # aws_instance.app_server will be destroyed
-  - resource "aws_instance" "app_server" {
-      - ami                                  = "ami-0568072f574d822a4" -> null
-      - arn                                  = "arn:aws:ec2:us-east-1:141352286036:instance/i-7b70a-----yu5c77" -> null
+  - resource "aws_instance" "my_server" {
+      - ami                                  = "ami-0a55b----0b74fc30" -> null
+      - arn                                  = "arn:aws:ec2:us-east-1:111152282222:instance/i-0b1551df3f6519ddb" -> nulli-7b70a-----yu5c77" -> null
       - associate_public_ip_address          = true -> null
       - availability_zone                    = "us-east-1b" -> null
       --- 생략 ---
@@ -221,10 +227,10 @@ Plan: 0 to add, 0 to change, 1 to destroy.
 
 Enter a value: yes
 
-aws_instance.app_server: Destroying... [id=i-7b70a-----yu5c77]
-aws_instance.app_server: Still destroying... [id=7b70a-----yu5c77, 10s elapsed]
+aws_instance.my_server: Destroying... [id=i-0b155----6519ddb]
+aws_instance.my_server: Still destroying... [id=i-0b155----6519ddb, 10s elapsed]
 -- 생략 --
-aws_instance.app_server: Still destroying... [id=i-7b70a-----yu5c77, 1m10s elapsed]
-aws_instance.app_server: Destruction complete after 1m13s
+aws_instance.my_server: Still destroying... [id=i-0b155----6519ddb, 1m10s elapsed]
+aws_instance.my_server: Destruction complete after 42s
 ``` 
 
