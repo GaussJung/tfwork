@@ -93,10 +93,10 @@ $ terraform init  : 초기화 (완료후 .terraform 디렉토리, .terraform.loc
 (message)  
 Terraform has been successfully initialized!   
 
-$ terraform validate : 문법 검토 
-- 이상이 없을 경우 아래의 plan단계로 넘어감.  이상 있는 경우 plan에서 제대로 동작하지 않음  
-(message)
-Success! The configuration is valid.
+$ terraform validate : 문법 검토  
+이상이 없을 경우 아래의 plan단계로 넘어감.  이상 있는 경우 plan에서 제대로 동작하지 않음  
+(message)  
+Success! The configuration is valid.  
 
 $ terraform plan  : (yes) / 계획설정  
 (message)  
@@ -195,8 +195,8 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 ```
  
 # TerraForm생성 리소스 확인 : 콘솔접속후 확인 
-- EC2생성확인 
-![tf_s1](https://github.com/GaussJung/tfwork/assets/76603627/7ad7f53a-591b-4cac-94f5-6c09d0e5286c)
+- EC2생성확인  
+<img src="https://github.com/GaussJung/tfwork/assets/76603627/7ad7f53a-591b-4cac-94f5-6c09d0e5286c" style="border: 1px solid grey">  
 - AWS계정접속하여 EC2로 이동
 - 생성된 EC2에 접속함. 
 
